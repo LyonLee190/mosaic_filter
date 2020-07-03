@@ -15,8 +15,7 @@ In terminal:
 - --i TARGETFILE
 : path to the target file, required
 - --sample SAMPLEFILE
-: path to the sample set, default "./color_set"[^1]
-[^1]: Retrived and cropped form https://www.shutterstock.com/blog/101-color-combinations-design-inspiration?kw=&gclsrc=aw.ds&gclid=Cj0KCQjw6PD3BRDPARIsAN8pHuGUKSPXlqAtRDskH4L9Ke9EugwnlAL6yxIfyvTKVRYgr9oO0__n6i0aAq1OEALw_wcB
+: path to the sample set, default "./color_set", **the RGB_generator.py in the same directory could be used to generate image based on its color code**
 - --type FILETYPE
 : type of the image in the sample set, default ".jpg"
 - --height HEIGHT
@@ -32,18 +31,20 @@ In terminal:
 
 ### Demo
 ###### Original image
-![Original](asuka.png)[^2]
-[^2]: Retrived from https://www.pixiv.net/en/artworks/81363989
+![Original](./DEMO/asuka.jpg)
+Image via
+[Amoc](https://www.pixiv.net/en/artworks/81363989)
+, PIXIV ID: 4093391
 ###### Filtered with default setting
-![Default setting](default.jpg)
-###### bins = 16
-![bins = 16](bins16.jpg)
+![Default setting](./DEMO/default.jpg)
+###### bins = 4
+![bins = 4](./DEMO/bins4.jpg)
 ###### height = 8
-![height = 8](height8.jpg)
+![height = 8](./DEMO/height8.jpg)
 ###### width = 8
-![width = 8](width8.jpg)
-###### option = "chi-squared"
-![chi-squared](chi-squared.jpg)
+![width = 8](./DEMO/width8.jpg)
+###### option = "hellinger"
+![hellinger](./DEMO/hellinger.jpg)
 ### Reference
 - https://www.pyimagesearch.com/2014/07/14/3-ways-compare-histograms-using-opencv-python/
 - https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/

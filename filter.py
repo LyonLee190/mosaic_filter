@@ -1,5 +1,5 @@
 '''
-By: Ang Li
+By: LyonLee190
 '''
 import argparse
 import cv2
@@ -11,7 +11,7 @@ class imgProcess:
         '''
         targetDir:      path to the target image
         sampleDir:      path to the directory containing sample images
-        height & with:  size of the cropped sample image,
+        height & with:  size of the sample image,
                         also used as the size of the tile in the mosaic painting
         '''
         self.targetDir = targetDir
@@ -22,23 +22,19 @@ class imgProcess:
 
     def load_samples(self):
         '''
-        Loads sample images and CROPS them to the size specified.
+        Loads sample images and resizes them.
         '''
         sampleSet = []
-
         for filename in os.listdir(self.sampleDir):
             # validate the file type
             if not re.search(self.fileType, filename, re.I):
                 continue
             filepath = os.path.join(self.sampleDir, filename)
 
-            # open and crop the sample to the size specified
+            # open and resize the sample
             img = cv2.imread(filepath)
-            h, w = img.shape[:2]
-            if h < self.height or w < self.width:
-                print("Failed to crop " + filename + ": out of the boundary.")
-                continue
-            sampleSet.append(img[0:self.height, 0:self.width].copy()) # only keep the crops in the memory
+            resized = cv2.resize(img, (self.width, self.height), interpolation=cv2.INTER_AREA)
+            sampleSet.append(resized)
 
         return sampleSet
 
@@ -87,9 +83,6 @@ class imgProcess:
 class comparison:
     '''
     Compares the color difference between two images based on their RGB histogram.
-    https://www.pyimagesearch.com/2014/07/14/3-ways-compare-histograms-using-opencv-python/
-    https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/
-    https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_histograms/py_histogram_begins/py_histogram_begins.html
     '''
     def __init__(self, bins, option):
         self.bins = bins
@@ -132,9 +125,9 @@ class comparison:
         results = {}
         for i in range(0, len(sampleHistSet)):
             diff = cv2.compareHist(tarHist, sampleHistSet[i], methods[self.option])
-            results[i] = diff
-        
+            results[i] = diff       
         results = sorted([(v, k) for (k, v) in results.items()], reverse = rev)
+
         # retrive the index of the best matched sample
         return results[0][1]
 
@@ -155,26 +148,27 @@ def main():
 
     # parse args
     args = parser.parse_args()
-    targetFile = args.targetFile
-    sampleFile = "./color_set"
+
+    targetFile = args.targetFile        # path to the target file
+    sampleFile = "./color_set"          # path to the sample set
     if args.sampleFile:
         sampleFile = args.sampleFile
-    fileType = ".jpg"
+    fileType = ".jpg"                   # type of the image in the sample set
     if args.fileType:
         fileType = args.fileType
-    height = 16
+    height = 16                         # height of the tile
     if args.height:
         height = int(args.height)
-    width = 16
+    width = 16                          # width of the tile
     if args.width:
         width = int(args.width)
-    outFile = "./out.jpg"
+    outFile = "./out.jpg"               # path to the output file
     if args.outFile:
         outFile = args.outFile
-    bins = 8
+    bins = 8                            # number of bins used for calculating RGB histogram
     if args.bins:
         bins = int(args.bins)
-    option = "correlation"
+    option = "correlation"              # method used for calculating histogram differences
     if args.option:
         option = args.option
 

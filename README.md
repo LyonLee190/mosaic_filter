@@ -32,10 +32,12 @@ In terminal:
 ### Demo
 ###### Original image
 ![Original](./DEMO/asuka.jpg)
+
 Image via
 [Amoc](https://www.pixiv.net/en/artworks/81363989)
 , PIXIV ID: 4093391
-###### Filtered with default setting
+
+###### default setting
 ![Default setting](./DEMO/default.jpg)
 ###### bins = 4
 ![bins = 4](./DEMO/bins4.jpg)
@@ -45,6 +47,9 @@ Image via
 ![width = 8](./DEMO/width8.jpg)
 ###### option = "hellinger"
 ![hellinger](./DEMO/hellinger.jpg)
+###### sampled with photo, width = 26
+![sampledWithPhoto](./DEMO/smapledWithPhoto.jpg)
 ### Reference
 - https://www.pyimagesearch.com/2014/07/14/3-ways-compare-histograms-using-opencv-python/
 - https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/
+- https://unsplash.com/t/wallpapers

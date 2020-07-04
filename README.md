@@ -30,7 +30,7 @@ In terminal:
 : method used for calculating histogram differences, default "correlation". Other options are "chi-squared", "intersection" and "hellinger"
 
 ### Demo
-###### Original image
+###### original image
 ![Original](./DEMO/asuka.jpg)
 
 Image via

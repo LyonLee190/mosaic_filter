@@ -30,10 +30,10 @@ In terminal:
 : method used for calculating histogram differences, default "correlation". Other options are "chi-squared", "intersection" and "hellinger"
 
 ### Demo
-###### original image
-![Original](./DEMO/asuka.jpg)
+###### original image | sampled with pure color | sampled with photo, height : width = 1 : 1.62
+![Original](./DEMO/sample.jpg)
 
-Image via
+Test image via
 [Amoc](https://www.pixiv.net/en/artworks/81363989)
 , PIXIV ID: 4093391
 
@@ -45,9 +45,6 @@ Image via
 
 ###### option =  Correlation | Chi-squared | Intersection | Hellinger
 ![method comparison](./DEMO/option.jpg)
-
-###### sampled with photo; height, width = 16, 26
-![sampledWithPhoto](./DEMO/smapledWithPhoto.jpg)
 
 ### Reference
 - https://www.pyimagesearch.com/2014/07/14/3-ways-compare-histograms-using-opencv-python/

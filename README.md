@@ -1,5 +1,4 @@
 # Mosaic Filter
-
 1. Splits the target image into tiles.
 2. Replaces each tile with the sample whose RGB histogram is closet to it in the image set.
 3. Generates the filtered image.

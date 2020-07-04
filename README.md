@@ -37,18 +37,18 @@ Image via
 [Amoc](https://www.pixiv.net/en/artworks/81363989)
 , PIXIV ID: 4093391
 
-###### default setting
-![Default setting](./DEMO/default.jpg)
-###### bins = 4
-![bins = 4](./DEMO/bins4.jpg)
-###### height = 8
-![height = 8](./DEMO/height8.jpg)
-###### width = 8
-![width = 8](./DEMO/width8.jpg)
-###### option = "hellinger"
-![hellinger](./DEMO/hellinger.jpg)
-###### sampled with photo, width = 26
+###### bins = 4 | 8 | 16
+![bin comparison](./DEMO/bin.jpg)
+
+###### height, width = 8, 16 | 16, 16 | 16, 8
+![size comparison](./DEMO/size.jpg)
+
+###### option =  Correlation | Chi-squared | Intersection | Hellinger
+![method comparison](./DEMO/option.jpg)
+
+###### sampled with photo; height, width = 16, 26
 ![sampledWithPhoto](./DEMO/smapledWithPhoto.jpg)
+
 ### Reference
 - https://www.pyimagesearch.com/2014/07/14/3-ways-compare-histograms-using-opencv-python/
 - https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/

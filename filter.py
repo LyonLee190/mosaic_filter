@@ -1,6 +1,3 @@
-'''
-By: LyonLee190
-'''
 import argparse
 import cv2
 import os

@@ -9,10 +9,6 @@
 
 ### Instruction
 In terminal:
-```
---help
-```
-> show this help message and exit
 
 ```
 --i TARGETFILE

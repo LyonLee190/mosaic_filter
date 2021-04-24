@@ -8,47 +8,27 @@
 - OpenCV
 
 ### Instruction
-In terminal:
-
+```bash
+$ # In terminal:
+$ # path to the target file, required
+$ --i TARGETFILE
+$ # path to the sample set, default "./color_set",
+$ # the RGB_generator.py in the same directory could be used to generate image based on its color code
+$ --sample SAMPLEFILE
+$ # type of the image in the sample set, default ".jpg"
+$ --type FILETYPE
+$ # height of the tile, default 16
+$ --height HEIGHT
+$ # width of the tile, default 16
+$ --width WIDTH
+$ # path to the output file, default "out.jpg"
+$ --o OUTFILE
+$ # number of bins used for calculating RGB histogram, default 8
+$ --bins BINS
+$ # method used for calculating histogram differences, default "correlation".
+$ # Other options are "chi-squared", "intersection", and "hellinger"
+$ --opt OPTION
 ```
---i TARGETFILE
-```
-> path to the target file, required
-
-```
---sample SAMPLEFILE
-```
-> path to the sample set, default "./color_set", **the RGB_generator.py in the same directory could be used to generate image based on its color code**
-
-```
---type FILETYPE
-```
-> type of the image in the sample set, default ".jpg"
-
-```
---height HEIGHT
-```
-> height of the tile, default 16
-
-```
---width WIDTH
-```
-> width of the tile, default 16
-
-```
---o OUTFILE
-```
-> path to the output file, default "out.jpg"
-
-```
---bins BINS
-```
-> number of bins used for calculating RGB histogram, default 8
-
-```
---opt OPTION
-```
-> method used for calculating histogram differences, default "correlation". Other options are "chi-squared", "intersection" and "hellinger"
 
 ### Demo
 ###### original image | sampled with pure color | sampled with photo, height : width = 1 : 1.62
